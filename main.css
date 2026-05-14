@@ -120,12 +120,14 @@ margin-top: 16px;
 }
 
 @media (max-width: 576px) {
+.BMI-main{font-size: 36px;}
 .container{max-width: 415px;}
 .The-BMI{font-size: 24px;}
 .quiz-block {width: 100%; max-width:200px;}
 }
 
 @media (max-width: 430px) {
+.BMI-main{font-size: 28px;}
 .container{max-width: 300px;}
 .Quiz-main{font-size: 36px;}
 .The-BMI{font-size: 18px;}
