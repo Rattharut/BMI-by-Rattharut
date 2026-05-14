@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>BMI by North</title>
+    <link rel="stylesheet" href="Reset.css">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Playpen+Sans+Thai:wght@100..800&display=swap" rel="stylesheet"><link
+    rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+
+    href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    
+</head>
+
+<body class="container"> 
+
+<div class="Main">
+   <h1 class="BMI-main">โปรแกรมคำนวณ BMI</h1>
+   <img src="./image/Miku Gym.jpg" alt="Photo Yui" class="Photo">
+   <h2 style="font-size: 64px; color: #4A8FE7;"><span id="res"></span></h2>
+   <p class="The-BMI">อยู่ในเกณฑ์: <span id="status"></span></p>
+   <a class="button" href="index.html">Reset</a>
+</div>
+
+<script>
+    const url = new URLSearchParams(window.location.search);
+    const w = parseFloat(url.get('w'));
+    const h = parseFloat(url.get('h')) / 100;
+
+    if (w && h) {
+        const bmi = (w / (h * h)).toFixed(2);
+        document.getElementById('res').innerText = bmi;
+
+        let s = bmi < 18.5 ? "ผอม" : bmi < 23 ? "ปกติ" : bmi < 25 ? "ท้วม" : bmi < 30 ? "อ้วน" : "อ้วนมาก";
+        document.getElementById('status').innerText = s;
+    }
+
+    if (w > 0 && w < 500 && h > 0 && h < 3) { 
+ 
+    } else {
+    document.getElementById('status').innerText = "พี่เป็นคนหรือตัวอะไร";
+}
+
+</script>
+
+</body>
+</html>
